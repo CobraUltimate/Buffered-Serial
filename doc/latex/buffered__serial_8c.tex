@@ -1,0 +1,132 @@
+\hypertarget{buffered__serial_8c}{}\doxysection{buffered\+\_\+serial.\+c File Reference}
+\label{buffered__serial_8c}\index{buffered\_serial.c@{buffered\_serial.c}}
+
+
+Serial communication based on a circular buffer, dma and huart with hal controls and Static Strings.  
+
+
+{\ttfamily \#include \char`\"{}buffered\+\_\+serial.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{buffered__serial_8c_a932ac0c10c65aeaa78c96188842bf0b4}{buffered\+\_\+serial\+\_\+init}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$$\ast$huarts)
+\begin{DoxyCompactList}\small\item\em Link huarts and buffers with serial descriptors and init rx data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$ \mbox{\hyperlink{buffered__serial_8c_a82298a570a1b7f5d4a74b5b60b36dce1}{buffered\+\_\+serial\+\_\+get\+\_\+huart\+\_\+serial\+\_\+descriptor}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em Returns the serial\+\_\+descriptor of the provided huart. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{buffered__serial_8c_a0e3c19f2a6c72c3073ae12badfdb4e21}{buffered\+\_\+serial\+\_\+available}} (\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Calculates and returns the number of characters that can be read from rx buffer. Also init the Static Strings library. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{buffered__serial_8c_ae54417e2bdcff8f9e9069e48fd8a2a86}{buffered\+\_\+serial\+\_\+print\+\_\+string}} (static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$string\+\_\+descriptor, \mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Transmit a string with the specific huart in the serial descriptor. String larger than B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+B\+U\+F\+F\+E\+R\+S\+\_\+\+S\+I\+ZE will be transmitted in blocks of that size. \end{DoxyCompactList}\item 
+static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$ \mbox{\hyperlink{buffered__serial_8c_a15c8c3fa697255aa99e6e84c41bcb272}{buffered\+\_\+serial\+\_\+read\+\_\+string}} (\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial)
+\begin{DoxyCompactList}\small\item\em Read a string in the specific huart buffer in the serial descriptor. String must have \textbackslash{}r\textbackslash{}n line end. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{buffered__serial_8c_a1eaf9bea7e2cffbaddb95999f1709fc2}{buffered\+\_\+serial\+\_\+update\+\_\+rx\+\_\+buffer\+\_\+data}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em When I\+D\+LE line interruption is fired this function updates the rx buffer meta data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial communication based on a circular buffer, dma and huart with hal controls and Static Strings. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{buffered__serial_8c_a0e3c19f2a6c72c3073ae12badfdb4e21}\label{buffered__serial_8c_a0e3c19f2a6c72c3073ae12badfdb4e21}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_available@{buffered\_serial\_available}}
+\index{buffered\_serial\_available@{buffered\_serial\_available}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_available()}{buffered\_serial\_available()}}
+{\footnotesize\ttfamily uint16\+\_\+t buffered\+\_\+serial\+\_\+available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$}]{serial }\end{DoxyParamCaption})}
+
+
+
+Calculates and returns the number of characters that can be read from rx buffer. Also init the Static Strings library. 
+
+uint16\+\_\+t \mbox{\hyperlink{buffered__serial_8h_a0e3c19f2a6c72c3073ae12badfdb4e21}{buffered\+\_\+serial\+\_\+available(buffered\+\_\+serial\+\_\+serial\+\_\+descriptor $\ast$serial)}} 
+\begin{DoxyParams}{Parameters}
+{\em serial} & Serial descriptor of the target huart. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of characters that can be read from rx buffer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{buffered__serial_8c_a82298a570a1b7f5d4a74b5b60b36dce1}\label{buffered__serial_8c_a82298a570a1b7f5d4a74b5b60b36dce1}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_get\_huart\_serial\_descriptor@{buffered\_serial\_get\_huart\_serial\_descriptor}}
+\index{buffered\_serial\_get\_huart\_serial\_descriptor@{buffered\_serial\_get\_huart\_serial\_descriptor}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_get\_huart\_serial\_descriptor()}{buffered\_serial\_get\_huart\_serial\_descriptor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}}$\ast$ buffered\+\_\+serial\+\_\+get\+\_\+huart\+\_\+serial\+\_\+descriptor (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+Returns the serial\+\_\+descriptor of the provided huart. 
+
+\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} \mbox{\hyperlink{buffered__serial_8h_a82298a570a1b7f5d4a74b5b60b36dce1}{buffered\+\_\+serial\+\_\+get\+\_\+huart\+\_\+serial\+\_\+descriptor(\+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)}} 
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to a U\+A\+R\+T\+\_\+\+Handle\+Type\+Def. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the serial descriptor of the provided huart. return N\+U\+LL if there is no serial descriptor attached to the huart provided. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{buffered__serial_8c_a932ac0c10c65aeaa78c96188842bf0b4}\label{buffered__serial_8c_a932ac0c10c65aeaa78c96188842bf0b4}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_init@{buffered\_serial\_init}}
+\index{buffered\_serial\_init@{buffered\_serial\_init}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_init()}{buffered\_serial\_init()}}
+{\footnotesize\ttfamily void buffered\+\_\+serial\+\_\+init (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$$\ast$}]{huarts }\end{DoxyParamCaption})}
+
+
+
+Link huarts and buffers with serial descriptors and init rx data. 
+
+void \mbox{\hyperlink{buffered__serial_8h_a932ac0c10c65aeaa78c96188842bf0b4}{buffered\+\_\+serial\+\_\+init(\+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$$\ast$huarts)}} 
+\begin{DoxyParams}{Parameters}
+{\em huarts} & Array of pointers to huart pointer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{buffered__serial_8c_ae54417e2bdcff8f9e9069e48fd8a2a86}\label{buffered__serial_8c_ae54417e2bdcff8f9e9069e48fd8a2a86}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_print\_string@{buffered\_serial\_print\_string}}
+\index{buffered\_serial\_print\_string@{buffered\_serial\_print\_string}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_print\_string()}{buffered\_serial\_print\_string()}}
+{\footnotesize\ttfamily void buffered\+\_\+serial\+\_\+print\+\_\+string (\begin{DoxyParamCaption}\item[{static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$}]{string\+\_\+descriptor,  }\item[{\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$}]{serial }\end{DoxyParamCaption})}
+
+
+
+Transmit a string with the specific huart in the serial descriptor. String larger than B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+B\+U\+F\+F\+E\+R\+S\+\_\+\+S\+I\+ZE will be transmitted in blocks of that size. 
+
+void \mbox{\hyperlink{buffered__serial_8h_ae54417e2bdcff8f9e9069e48fd8a2a86}{buffered\+\_\+serial\+\_\+print\+\_\+string(static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$string,buffered\+\_\+serial\+\_\+serial\+\_\+descriptor $\ast$serial)}} 
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+descriptor} & Descriptor of the string to transmit. Must have the format specified in the library Static Strings. \\
+\hline
+{\em serial} & Serial descriptor of the target huart. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{buffered__serial_8c_a15c8c3fa697255aa99e6e84c41bcb272}\label{buffered__serial_8c_a15c8c3fa697255aa99e6e84c41bcb272}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_read\_string@{buffered\_serial\_read\_string}}
+\index{buffered\_serial\_read\_string@{buffered\_serial\_read\_string}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_read\_string()}{buffered\_serial\_read\_string()}}
+{\footnotesize\ttfamily static\+\_\+strings\+\_\+string\+\_\+descriptor$\ast$ buffered\+\_\+serial\+\_\+read\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$}]{serial }\end{DoxyParamCaption})}
+
+
+
+Read a string in the specific huart buffer in the serial descriptor. String must have \textbackslash{}r\textbackslash{}n line end. 
+
+static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$buffered\+\_\+serial\+\_\+read\+\_\+string(\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial) 
+\begin{DoxyParams}{Parameters}
+{\em serial} & Serial descriptor of the target huart. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String descriptor of the line read (See library Static Strings), return N\+U\+LL if no string detected. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{buffered__serial_8c_a1eaf9bea7e2cffbaddb95999f1709fc2}\label{buffered__serial_8c_a1eaf9bea7e2cffbaddb95999f1709fc2}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_update\_rx\_buffer\_data@{buffered\_serial\_update\_rx\_buffer\_data}}
+\index{buffered\_serial\_update\_rx\_buffer\_data@{buffered\_serial\_update\_rx\_buffer\_data}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_update\_rx\_buffer\_data()}{buffered\_serial\_update\_rx\_buffer\_data()}}
+{\footnotesize\ttfamily void buffered\+\_\+serial\+\_\+update\+\_\+rx\+\_\+buffer\+\_\+data (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+When I\+D\+LE line interruption is fired this function updates the rx buffer meta data. 
+
+void \mbox{\hyperlink{buffered__serial_8h_a1eaf9bea7e2cffbaddb95999f1709fc2}{buffered\+\_\+serial\+\_\+update\+\_\+rx\+\_\+buffer\+\_\+data(\+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)}} 
+\begin{DoxyParams}{Parameters}
+{\em huart} & I\+D\+LE line interruption source. \\
+\hline
+\end{DoxyParams}
