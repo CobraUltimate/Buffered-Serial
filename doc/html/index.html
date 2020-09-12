@@ -95,9 +95,10 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li>Developed for the STM32F103.</li>
 <li>Serial communication with DMA in circular mode and IDLE interrupt.</li>
 <li>Configurable quantity of serials and size of rx and tx buffers.</li>
-<li>Simple communication with print string and read line functions.</li>
+<li>Simple communication with print string,print character and read line functions.</li>
 <li>STM32CubeIDE project configuration guide.</li>
 <li>Error handling with buffered_serial_error_code.</li>
+<li>UART Error handling</li>
 </ul>
 <p><b>Considerations:</b></p>
 <ul>
@@ -108,6 +109,12 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p><br  />
 <b>GETTING STARTED</b></p>
 <p><br  />
+<b>UART Error handling in buffered_serial.c</b> <br  />
+ </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)</div>
+<div class="line">{</div>
+<div class="line">  HAL_UART_Receive_DMA(huart,<a class="code" href="buffered__serial_8h.html#a82298a570a1b7f5d4a74b5b60b36dce1">buffered_serial_get_huart_serial_descriptor</a>(huart)-&gt;rx_buffer,BUFFERED_SERIAL_BUFFERS_SIZE);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><br  />
 <b>Configure IDLE interrupt in stm32f1xx_it.c</b> <br  />
  Configure project as described in file project_configuration.pdf in root folder. IDLE interrupt must be configured for all huart interrupt handlers.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> USART1_IRQHandler(<span class="keywordtype">void</span>)</div>
@@ -145,6 +152,10 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line">}</div>
 </div><!-- fragment --><p>DON'T FORGET TO DEALLOCATE STRING AFTER USING.<br  />
  <br  />
+<b>Writing a character</b> <br  />
+ </p><div class="fragment"><div class="line">uint8_t character = <span class="charliteral">&#39;A&#39;</span>;</div>
+<div class="line"><a class="code" href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba">buffered_serial_print_character</a>(serial1,character);</div>
+</div><!-- fragment --><p><br  />
 <b>Configure serials quantity and size of the buffers</b> <br  />
  Just edit these constants in <a class="el" href="buffered__serial_8h.html" title="Serial communication based on a circular buffer, dma and huart with hal controls and Static Strings.">buffered_serial.h</a></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define BUFFERED_SERIAL_SERIALS_QUANTITY 1</span></div>
@@ -156,10 +167,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="ttc" id="abuffered__serial_8h_html_a82298a570a1b7f5d4a74b5b60b36dce1"><div class="ttname"><a href="buffered__serial_8h.html#a82298a570a1b7f5d4a74b5b60b36dce1">buffered_serial_get_huart_serial_descriptor</a></div><div class="ttdeci">buffered_serial_serial_descriptor * buffered_serial_get_huart_serial_descriptor(UART_HandleTypeDef *huart)</div><div class="ttdoc">Returns the serial_descriptor of the provided huart.</div></div>
 <div class="ttc" id="abuffered__serial_8h_html_a1eaf9bea7e2cffbaddb95999f1709fc2"><div class="ttname"><a href="buffered__serial_8h.html#a1eaf9bea7e2cffbaddb95999f1709fc2">buffered_serial_update_rx_buffer_data</a></div><div class="ttdeci">void buffered_serial_update_rx_buffer_data(UART_HandleTypeDef *huart)</div><div class="ttdoc">When IDLE line interruption is fired this function updates the rx buffer meta data.</div></div>
 <div class="ttc" id="abuffered__serial_8h_html_a0e3c19f2a6c72c3073ae12badfdb4e21"><div class="ttname"><a href="buffered__serial_8h.html#a0e3c19f2a6c72c3073ae12badfdb4e21">buffered_serial_available</a></div><div class="ttdeci">uint16_t buffered_serial_available(buffered_serial_serial_descriptor *serial)</div><div class="ttdoc">Calculates and returns the number of characters that can be read from the rx buffer.</div></div>
+<div class="ttc" id="abuffered__serial_8h_html_a91711a2de902889195a31c70926d4dba"><div class="ttname"><a href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba">buffered_serial_print_character</a></div><div class="ttdeci">void buffered_serial_print_character(buffered_serial_serial_descriptor *serial, uint8_t character)</div><div class="ttdoc">Transmit a character with the specific huart in the serial descriptor.</div></div>
 <div class="ttc" id="abuffered__serial_8h_html_a932ac0c10c65aeaa78c96188842bf0b4"><div class="ttname"><a href="buffered__serial_8h.html#a932ac0c10c65aeaa78c96188842bf0b4">buffered_serial_init</a></div><div class="ttdeci">void buffered_serial_init(UART_HandleTypeDef **huarts)</div><div class="ttdoc">Link huarts and buffers with serial descriptors and init rx data receiving and idle interrupt....</div></div>
 <div class="ttc" id="abuffered__serial_8h_html_a616e9a5064971acf1001fb461c727d77"><div class="ttname"><a href="buffered__serial_8h.html#a616e9a5064971acf1001fb461c727d77">buffered_serial_read_line</a></div><div class="ttdeci">static_strings_string_descriptor * buffered_serial_read_line(buffered_serial_serial_descriptor *serial)</div><div class="ttdoc">Read a string in the specific huart buffer in the serial descriptor. String must have \r\n line endin...</div></div>
-<div class="ttc" id="astructbuffered__serial__serial__descriptor_html"><div class="ttname"><a href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a></div><div class="ttdoc">Meta data of a buffered serial.</div><div class="ttdef"><b>Definition:</b> buffered_serial.h:135</div></div>
-<div class="ttc" id="agroup__error__handling_html_gad287e746856213bf13293b3fa8153277"><div class="ttname"><a href="group__error__handling.html#gad287e746856213bf13293b3fa8153277">buffered_serial_error_code</a></div><div class="ttdeci">uint8_t buffered_serial_error_code</div><div class="ttdoc">Global variable to store error code.</div><div class="ttdef"><b>Definition:</b> buffered_serial.h:129</div></div>
+<div class="ttc" id="astructbuffered__serial__serial__descriptor_html"><div class="ttname"><a href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a></div><div class="ttdoc">Meta data of a buffered serial.</div><div class="ttdef"><b>Definition:</b> buffered_serial.h:156</div></div>
+<div class="ttc" id="agroup__error__handling_html_gad287e746856213bf13293b3fa8153277"><div class="ttname"><a href="group__error__handling.html#gad287e746856213bf13293b3fa8153277">buffered_serial_error_code</a></div><div class="ttdeci">uint8_t buffered_serial_error_code</div><div class="ttdoc">Global variable to store error code.</div><div class="ttdef"><b>Definition:</b> buffered_serial.h:150</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

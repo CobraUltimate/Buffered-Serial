@@ -36,70 +36,79 @@ else:
 
 #test 2
 
+character = ser.read(1)
+print(character)
+if character == b'A':
+	print(colored('success test 2','blue'))
+else:
+	print(colored('fail test 2','red'))
+
+#test 3 - 7
+
 test2_write = b'Hello my friend\r\n'
 ser.write(test2_write)
 test2_read = ser.readline()
 print(test2_read)
 if(test2_read == b'00000017\r\n'):
-	print(colored('success test 2.1','blue'))
+	print(colored('success test 3.1','blue'))
 else:
-	print(colored('fail test 2.1','red'))
+	print(colored('fail test 3.1','red'))
 test2_read = ser.readline()
 print(test2_read)
 if(test2_read == test2_write):
-	print(colored('success test 2.2','blue'))
+	print(colored('success test 3.2','blue'))
 else:
-	print(colored('fail test 2.2','red'))
+	print(colored('fail test 3.2','red'))
 
 test3_write = b'38GUJ8SQ3UQK343Q5WQYF6MQ2HP937TAYDE4WXDVFGRH6WHSZLJ86LQ3WJPYJJESR8T4GNFFHV4P8U293YAL38KGH8EWB26GALX79BDWSBYLZFEYG6VBZLBUS2NBKPQ9J8DRJ7ZN7UVJ488LXA9PLGA65BEY29NFCF3YPWRRDVFRNBH9A6Z8ZZEC93DN6XD9ZTSR2TMEX57VHTG3ZHJX5CF6959P9K9TLMQNETP3NVWPCR5KC93Z52QA5TXEATC3Y99UZHGHZCTFUZMKX7MCU9TLAJXPELC8SC6QRNG88BKM9WCPXETWH8D8PXZZUS6EEWAA4KFBZCGVDHRSGDYJJEJ9QQ3FAY5P2J8VMLWS6VU8W5XEVHE8VEUWY4THE3HX68ND9YZUVJTTLR2B7Y7DSX7E4WN6YB98SSS5K3PWZWSL82BKMA9Y8JFZNUAXBQN3V8ABEV2F8VHUVH6SJUESPQV4EVS3D2ARHENSYBUEX23Q2UN3Z\r\n'
 ser.write(test3_write)
 test3_read = ser.readline()
 print(test3_read)
 if(test3_read == b'00000499\r\n'):
-	print(colored('success test 3.1','blue'))
+	print(colored('success test 4.1','blue'))
 else:
-	print(colored('fail test 3.1','red'))
+	print(colored('fail test 4.1','red'))
 test3_read = ser.readline()
 print(test3_read)
 if(test3_read == test3_write):
-	print(colored('success test 3.2','blue'))
+	print(colored('success test 4.2','blue'))
 else:
-	print(colored('fail test 3.2','red'))
+	print(colored('fail test 4.2','red'))
 
 test4_write = b'ramses\r\n'
 ser.write(test4_write)
 test4_read = ser.readline()
 print(test4_read)
 if(test4_read == b'00000008\r\n'):
-	print(colored('success test 4.1','blue'))
+	print(colored('success test 5.1','blue'))
 else:
-	print(colored('fail test 4.1','red'))
+	print(colored('fail test 5.1','red'))
 test4_read = ser.readline()
 print(test4_read)
 if(test4_read == test4_write):
-	print(colored('success test 4.2','blue'))
+	print(colored('success test 5.2','blue'))
 else:
-	print(colored('fail test 4.2','red'))
+	print(colored('fail test 5.2','red'))
 
 ser.write(test3_write)
 test5_read = ser.readline()
 print(test5_read)
 if(test5_read == b'00000499\r\n'):
-	print(colored('success test 5.1','blue'))
+	print(colored('success test 6.1','blue'))
 else:
-	print(colored('fail test 5.1','red'))
+	print(colored('fail test 6.1','red'))
 test5_read = ser.readline()
 print(test5_read)
 if(test5_read == test3_write):
-	print(colored('success test 5.2','blue'))
+	print(colored('success test 6.2','blue'))
 else:
-	print(colored('fail test 5.2','red'))
+	print(colored('fail test 6.2','red'))
 
 test6_write = b'38GUJ8SQ3UQK343Q5WQYF6MQ2HP937TAYDE4WXDVFGRH6WHSZLJ86LQ3WJPYJJESR8T4GNFFHV4P8U293YAL38KGH8EWB26GALX79BDWSBYLZFEYG6VBZLBUS2NBKPQ9J8DRJ7ZN7UVJ488LXA9PLGA65BEY29NFCF3YPWRRDVFRNBH9A6Z8ZZEC93DN6XD9ZTSR2TMEX57VHTG3ZHJX5CF6959P9K9TLMQNETP3NVWPCR5KC93Z52QA5TXEATC3Y99UZHGHZCTFUZMKX7MCU9TLAJXPELC8SC6QRNG88BKM9WCPXETWH8D8PXZZUS6EEWAA4KFBZCGVDHRSGDYJJEJ9QQ3FAY5P2J8VMLWS6VU8W5XEVHE8VEUWY4THE3HX68ND9YZUVJTTLR2B7Y7DSX7E4WN6YB98SSS5K3PWZWSL82BKMA9Y8JFZNUAXBQN3V8ABEV2F8VHUVH6SJUESPQV4EVS3D2ARHENSYBUEX23Q2UN3ZX\r\n'
 ser.write(test6_write)
 time.sleep(1)
 print(ser.in_waiting)
 if(ser.in_waiting == 0):
-	print(colored('success test 6.0','blue'))
+	print(colored('success test 7.0','blue'))
 else:
-	print(colored('fail test 6.0','red'))
+	print(colored('fail test 7.0','red'))

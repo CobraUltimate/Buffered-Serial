@@ -125,10 +125,15 @@ int main(void)
   static_strings_deallocate(string_descriptor);
   HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_SET);
 
+  // test 2
+
+  uint8_t character = 'A';
+  buffered_serial_print_character(serial1,character);
+
   while (1)
   {
 
-	  // test 2-6 Echo
+	  // test 3-7 Echo
 
 	  if(buffered_serial_available(serial1) > 0){
 		  uint16_t available = buffered_serial_available(serial1);

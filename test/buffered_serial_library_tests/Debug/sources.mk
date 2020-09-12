@@ -22,6 +22,6 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32F1xx_HAL_Driver/Src \
-lib/static_strings/src \
 src \
+static_strings_src \
 

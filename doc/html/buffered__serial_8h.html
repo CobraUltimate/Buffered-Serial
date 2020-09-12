@@ -140,6 +140,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8h.html#a0e3c19f2a6c72c3073ae12badfdb4e21">buffered_serial_available</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial)</td></tr>
 <tr class="memdesc:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and returns the number of characters that can be read from the rx buffer.  <a href="buffered__serial_8h.html#a0e3c19f2a6c72c3073ae12badfdb4e21">More...</a><br /></td></tr>
 <tr class="separator:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91711a2de902889195a31c70926d4dba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba">buffered_serial_print_character</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial, uint8_t character)</td></tr>
+<tr class="memdesc:a91711a2de902889195a31c70926d4dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a character with the specific huart in the serial descriptor.  <a href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba">More...</a><br /></td></tr>
+<tr class="separator:a91711a2de902889195a31c70926d4dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9f239a3911da64fee87093df8bf360e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8h.html#af9f239a3911da64fee87093df8bf360e">buffered_serial_print_string</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial, static_strings_string_descriptor *string_descriptor)</td></tr>
 <tr class="memdesc:af9f239a3911da64fee87093df8bf360e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a string with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.  <a href="buffered__serial_8h.html#af9f239a3911da64fee87093df8bf360e">More...</a><br /></td></tr>
 <tr class="separator:af9f239a3911da64fee87093df8bf360e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,6 +245,43 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffered_serial_tx
 <p>void <a class="el" href="buffered__serial_8h.html#a932ac0c10c65aeaa78c96188842bf0b4" title="Link huarts and buffers with serial descriptors and init rx data receiving and idle interrupt....">buffered_serial_init(UART_HandleTypeDef **huarts)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">huarts</td><td>Array of pointers to huart pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a91711a2de902889195a31c70926d4dba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91711a2de902889195a31c70926d4dba">&#9670;&nbsp;</a></span>buffered_serial_print_character()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void buffered_serial_print_character </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td>
+          <td class="paramname"><em>serial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>character</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit a character with the specific huart in the serial descriptor. </p>
+<p>void <a class="el" href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba" title="Transmit a character with the specific huart in the serial descriptor.">buffered_serial_print_character(buffered_serial_serial_descriptor *serial,uint8_t character)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">character</td><td>character to transmit. </td></tr>
+    <tr><td class="paramname">serial</td><td>Pointer to the serial descriptor of the target huart. </td></tr>
   </table>
   </dd>
 </dl>

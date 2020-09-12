@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffered_20serial_29',['Buffered Serial',['../index.html',1,'']]]
+  ['buffered_20serial_31',['Buffered Serial',['../index.html',1,'']]]
 ];

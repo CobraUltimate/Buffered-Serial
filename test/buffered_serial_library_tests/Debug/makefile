@@ -8,8 +8,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include static_strings_src/subdir.mk
 -include src/subdir.mk
--include lib/static_strings/src/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -49,7 +49,7 @@ all: buffered_serial_library_tests.elf secondary-outputs
 
 # Tool invocations
 buffered_serial_library_tests.elf: $(OBJS) $(USER_OBJS) C:\Users\carro\STM32CubeIDE\workspace_1.4.0\buffered_serial\test\buffered_serial_library_tests\STM32F103C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "buffered_serial_library_tests.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\carro\STM32CubeIDE\workspace_1.4.0\buffered_serial\test\buffered_serial_library_tests\STM32F103C8TX_FLASH.ld" -Wl,-Map="buffered_serial_library_tests.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "buffered_serial_library_tests.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\carro\STM32CubeIDE\workspace_1.4.0\buffered_serial\test\buffered_serial_library_tests\STM32F103C8TX_FLASH.ld" -Wl,-Map="buffered_serial_library_tests.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

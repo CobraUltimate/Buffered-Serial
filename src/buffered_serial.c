@@ -37,6 +37,11 @@ uint16_t buffered_serial_available(buffered_serial_serial_descriptor *serial){
 	}
 }
 
+void buffered_serial_print_character(buffered_serial_serial_descriptor *serial,uint8_t character){
+	while(serial->huart->gState == HAL_UART_STATE_BUSY_TX);
+	HAL_UART_Transmit_DMA(serial->huart,&character,1);
+}
+
 void buffered_serial_print_string(buffered_serial_serial_descriptor *serial,static_strings_string_descriptor *string_descriptor){
 	uint16_t remaining_data_to_send = string_descriptor->length;
 	while(remaining_data_to_send > 0){
@@ -109,4 +114,9 @@ void buffered_serial_update_rx_buffer_data(UART_HandleTypeDef *huart){
 			}
 		}
 	}
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+	HAL_UART_Receive_DMA(huart,buffered_serial_get_huart_serial_descriptor(huart)->rx_buffer,BUFFERED_SERIAL_BUFFERS_SIZE);
 }

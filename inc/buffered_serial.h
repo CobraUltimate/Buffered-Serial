@@ -10,9 +10,10 @@
  * - Developed for the STM32F103.
  * - Serial communication with DMA in circular mode and IDLE interrupt.
  * - Configurable quantity of serials and size of rx and tx buffers.
- * - Simple communication with print string and read line functions.
+ * - Simple communication with print string,print character and read line functions.
  * - STM32CubeIDE project configuration guide.
  * - Error handling with buffered_serial_error_code.
+ * - UART Error handling
  *
  * **Considerations:**
  *
@@ -22,6 +23,17 @@
  *
  * \n
  * **GETTING STARTED**
+ *
+ * \n
+ * **UART Error handling in buffered_serial.c**
+ * \n
+ *
+ * @code
+ * void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+ * {
+ *   HAL_UART_Receive_DMA(huart,buffered_serial_get_huart_serial_descriptor(huart)->rx_buffer,BUFFERED_SERIAL_BUFFERS_SIZE);
+ * }
+ * @endcode
  *
  * \n
  * **Configure IDLE interrupt in stm32f1xx_it.c**
@@ -83,6 +95,15 @@
  * @endcode
  *
  * DON'T FORGET TO DEALLOCATE STRING AFTER USING.\n
+ *
+ * \n
+ * **Writing a character**
+ * \n
+ *
+ * @code
+ * uint8_t character = 'A';
+ * buffered_serial_print_character(serial1,character);
+ * @endcode
  *
  * \n
  * **Configure serials quantity and size of the buffers**
@@ -171,6 +192,13 @@ buffered_serial_serial_descriptor *buffered_serial_get_huart_serial_descriptor(U
  * \return Number of characters that can be read from the rx buffer.
  */
 uint16_t buffered_serial_available(buffered_serial_serial_descriptor *serial);
+
+/** void buffered_serial_print_character(buffered_serial_serial_descriptor *serial,uint8_t character)
+ * \brief Transmit a character with the specific huart in the serial descriptor.
+ * \param character character to transmit.
+ * \param serial Pointer to the serial descriptor of the target huart.
+ */
+void buffered_serial_print_character(buffered_serial_serial_descriptor *serial,uint8_t character);
 
 /** void buffered_serial_print_string(static_strings_string_descriptor *string,buffered_serial_serial_descriptor *serial)
  * \brief Transmit a string with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.

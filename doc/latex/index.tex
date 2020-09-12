@@ -14,9 +14,10 @@ August 2020
 \item Developed for the S\+T\+M32\+F103.
 \item Serial communication with D\+MA in circular mode and I\+D\+LE interrupt.
 \item Configurable quantity of serials and size of rx and tx buffers.
-\item Simple communication with print string and read line functions.
+\item Simple communication with print string,print character and read line functions.
 \item S\+T\+M32\+Cube\+I\+DE project configuration guide.
 \item Error handling with buffered\+\_\+serial\+\_\+error\+\_\+code.
+\item U\+A\+RT Error handling
 \end{DoxyItemize}
 
 {\bfseries{Considerations\+:}}
@@ -30,6 +31,17 @@ August 2020
 
 ~\newline
 {\bfseries{G\+E\+T\+T\+I\+NG S\+T\+A\+R\+T\+ED}}
+
+~\newline
+{\bfseries{U\+A\+RT Error handling in buffered\+\_\+serial.\+c}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} HAL\_UART\_ErrorCallback(UART\_HandleTypeDef *huart)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  HAL\_UART\_Receive\_DMA(huart,\mbox{\hyperlink{buffered__serial_8h_a82298a570a1b7f5d4a74b5b60b36dce1}{buffered\_serial\_get\_huart\_serial\_descriptor}}(huart)-\/>rx\_buffer,BUFFERED\_SERIAL\_BUFFERS\_SIZE);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
 
 ~\newline
 {\bfseries{Configure I\+D\+LE interrupt in stm32f1xx\+\_\+it.\+c}} ~\newline
@@ -90,6 +102,15 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I
 
 D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I\+NG A\+F\+T\+ER U\+S\+I\+NG.~\newline
  ~\newline
+{\bfseries{Writing a character}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t character = \textcolor{charliteral}{'A'};}
+\DoxyCodeLine{\mbox{\hyperlink{buffered__serial_8h_a91711a2de902889195a31c70926d4dba}{buffered\_serial\_print\_character}}(serial1,character);}
+\end{DoxyCode}
+
+
+~\newline
 {\bfseries{Configure serials quantity and size of the buffers}} ~\newline
  Just edit these constants in \mbox{\hyperlink{buffered__serial_8h}{buffered\+\_\+serial.\+h}}
 
