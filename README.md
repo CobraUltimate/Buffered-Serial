@@ -16,7 +16,7 @@
 
  # **GETTING STARTED**
  
- ##**UART Error handling in buffered_serial.c**
+ ## **UART Error handling in buffered_serial.c**
 
  ```C
  void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
