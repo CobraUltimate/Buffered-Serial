@@ -107,7 +107,7 @@ Considerations:</h1>
 <li>Buffers can hold at most BUFFERED_SERIAL_BUFFERS_SIZE - 1 data, because when rx_buffer_data_start and rx_buffer_data_finish pointers are equals it can be 0 data or maximum data but the library interpret as 0 data.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
-GETTING STARTED</h1>
+Getting Started</h1>
 <h2><a class="anchor" id="autotoc_md3"></a>
 UART Error handling in buffered_serial.c</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)</div>
@@ -156,7 +156,7 @@ Writing a character</h2>
 <div class="fragment"><div class="line">uint8_t character = <span class="charliteral">&#39;A&#39;</span>;</div>
 <div class="line"><a class="code" href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba">buffered_serial_print_character</a>(serial1,character);</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
-&lt;strong&gt;Configure serials quantity and size of the buffers&lt;/strong&gt;</h2>
+Configure serials quantity and size of the buffers</h2>
 <p>Just edit these constants in <a class="el" href="buffered__serial_8h.html" title="Serial communication based on a circular buffer, dma and huart with hal controls and Static Strings.">buffered_serial.h</a></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define BUFFERED_SERIAL_SERIALS_QUANTITY 1</span></div>
 <div class="line"><span class="preprocessor">#define BUFFERED_SERIAL_BUFFERS_SIZE 500</span></div>

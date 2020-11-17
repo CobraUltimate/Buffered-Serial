@@ -27,14 +27,14 @@ var NAVTREE =
   [ "Buffered Serial", "index.html", [
     [ "Features:", "index.html#autotoc_md0", null ],
     [ "Considerations:", "index.html#autotoc_md1", null ],
-    [ "GETTING STARTED", "index.html#autotoc_md2", [
+    [ "Getting Started", "index.html#autotoc_md2", [
       [ "UART Error handling in buffered_serial.c", "index.html#autotoc_md3", null ],
       [ "Configure IDLE interrupt in stm32f1xx_it.c", "index.html#autotoc_md4", null ],
       [ "Initializing library and getting serial descriptor in main.c file", "index.html#autotoc_md5", null ],
       [ "Writing a string", "index.html#autotoc_md6", null ],
       [ "Reading a line", "index.html#autotoc_md7", null ],
       [ "Writing a character", "index.html#autotoc_md8", null ],
-      [ "<strong>Configure serials quantity and size of the buffers</strong>", "index.html#autotoc_md9", null ]
+      [ "Configure serials quantity and size of the buffers", "index.html#autotoc_md9", null ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [

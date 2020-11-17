@@ -17,7 +17,7 @@ Buffered Serial {#mainpage}
  - BUFFERED_SERIAL_BUFFERS_SIZE at most can be maximum value of uint16_t, since buffered_serial_available is this type.
  - Buffers can hold at most BUFFERED_SERIAL_BUFFERS_SIZE - 1 data, because when rx_buffer_data_start and rx_buffer_data_finish pointers are equals it can be 0 data or maximum data but the library interpret as 0 data.
 
- # GETTING STARTED
+ # Getting Started
  
  ## UART Error handling in buffered_serial.c
 
@@ -88,7 +88,7 @@ Buffered Serial {#mainpage}
  buffered_serial_print_character(serial1,character);
  ```
 
- ## **Configure serials quantity and size of the buffers**
+ ## Configure serials quantity and size of the buffers
 
  Just edit these constants in buffered_serial.h
 
