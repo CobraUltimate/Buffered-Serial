@@ -97,23 +97,29 @@ $(document).ready(function(){initNavTree('buffered__serial_8c.html',''); initRes
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a932ac0c10c65aeaa78c96188842bf0b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a932ac0c10c65aeaa78c96188842bf0b4">buffered_serial_init</a> (UART_HandleTypeDef **huarts)</td></tr>
-<tr class="memdesc:a932ac0c10c65aeaa78c96188842bf0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link huarts and buffers with serial descriptors and init rx data.  <a href="buffered__serial_8c.html#a932ac0c10c65aeaa78c96188842bf0b4">More...</a><br /></td></tr>
+<tr class="memdesc:a932ac0c10c65aeaa78c96188842bf0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link huarts and buffers with serial descriptors and init rx data receiving and idle interrupt. Also init the Static Strings library.  <a href="buffered__serial_8c.html#a932ac0c10c65aeaa78c96188842bf0b4">More...</a><br /></td></tr>
 <tr class="separator:a932ac0c10c65aeaa78c96188842bf0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82298a570a1b7f5d4a74b5b60b36dce1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a82298a570a1b7f5d4a74b5b60b36dce1">buffered_serial_get_huart_serial_descriptor</a> (UART_HandleTypeDef *huart)</td></tr>
 <tr class="memdesc:a82298a570a1b7f5d4a74b5b60b36dce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the serial_descriptor of the provided huart.  <a href="buffered__serial_8c.html#a82298a570a1b7f5d4a74b5b60b36dce1">More...</a><br /></td></tr>
 <tr class="separator:a82298a570a1b7f5d4a74b5b60b36dce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a0e3c19f2a6c72c3073ae12badfdb4e21">buffered_serial_available</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial)</td></tr>
-<tr class="memdesc:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and returns the number of characters that can be read from rx buffer. Also init the Static Strings library.  <a href="buffered__serial_8c.html#a0e3c19f2a6c72c3073ae12badfdb4e21">More...</a><br /></td></tr>
+<tr class="memdesc:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and returns the number of characters that can be read from the rx buffer.  <a href="buffered__serial_8c.html#a0e3c19f2a6c72c3073ae12badfdb4e21">More...</a><br /></td></tr>
 <tr class="separator:a0e3c19f2a6c72c3073ae12badfdb4e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae54417e2bdcff8f9e9069e48fd8a2a86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#ae54417e2bdcff8f9e9069e48fd8a2a86">buffered_serial_print_string</a> (static_strings_string_descriptor *string_descriptor, <a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial)</td></tr>
-<tr class="memdesc:ae54417e2bdcff8f9e9069e48fd8a2a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a string with the specific huart in the serial descriptor. String larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.  <a href="buffered__serial_8c.html#ae54417e2bdcff8f9e9069e48fd8a2a86">More...</a><br /></td></tr>
-<tr class="separator:ae54417e2bdcff8f9e9069e48fd8a2a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15c8c3fa697255aa99e6e84c41bcb272"><td class="memItemLeft" align="right" valign="top">static_strings_string_descriptor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a15c8c3fa697255aa99e6e84c41bcb272">buffered_serial_read_string</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial)</td></tr>
-<tr class="memdesc:a15c8c3fa697255aa99e6e84c41bcb272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a string in the specific huart buffer in the serial descriptor. String must have \r\n line end.  <a href="buffered__serial_8c.html#a15c8c3fa697255aa99e6e84c41bcb272">More...</a><br /></td></tr>
-<tr class="separator:a15c8c3fa697255aa99e6e84c41bcb272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91711a2de902889195a31c70926d4dba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a91711a2de902889195a31c70926d4dba">buffered_serial_print_character</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial, uint8_t character)</td></tr>
+<tr class="memdesc:a91711a2de902889195a31c70926d4dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a character with the specific huart in the serial descriptor.  <a href="buffered__serial_8c.html#a91711a2de902889195a31c70926d4dba">More...</a><br /></td></tr>
+<tr class="separator:a91711a2de902889195a31c70926d4dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f239a3911da64fee87093df8bf360e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#af9f239a3911da64fee87093df8bf360e">buffered_serial_print_string</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial, static_strings_string_descriptor *string_descriptor)</td></tr>
+<tr class="memdesc:af9f239a3911da64fee87093df8bf360e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a string with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.  <a href="buffered__serial_8c.html#af9f239a3911da64fee87093df8bf360e">More...</a><br /></td></tr>
+<tr class="separator:af9f239a3911da64fee87093df8bf360e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616e9a5064971acf1001fb461c727d77"><td class="memItemLeft" align="right" valign="top">static_strings_string_descriptor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a616e9a5064971acf1001fb461c727d77">buffered_serial_read_line</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial)</td></tr>
+<tr class="memdesc:a616e9a5064971acf1001fb461c727d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a string in the specific huart buffer in the serial descriptor. String must have \r\n line ending.  <a href="buffered__serial_8c.html#a616e9a5064971acf1001fb461c727d77">More...</a><br /></td></tr>
+<tr class="separator:a616e9a5064971acf1001fb461c727d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eaf9bea7e2cffbaddb95999f1709fc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a1eaf9bea7e2cffbaddb95999f1709fc2">buffered_serial_update_rx_buffer_data</a> (UART_HandleTypeDef *huart)</td></tr>
 <tr class="memdesc:a1eaf9bea7e2cffbaddb95999f1709fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">When IDLE line interruption is fired this function updates the rx buffer meta data.  <a href="buffered__serial_8c.html#a1eaf9bea7e2cffbaddb95999f1709fc2">More...</a><br /></td></tr>
 <tr class="separator:a1eaf9bea7e2cffbaddb95999f1709fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0456ea96d55db31de947fb3e954f18"><td class="memItemLeft" align="right" valign="top"><a id="a0e0456ea96d55db31de947fb3e954f18"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UART_ErrorCallback</b> (UART_HandleTypeDef *huart)</td></tr>
+<tr class="separator:a0e0456ea96d55db31de947fb3e954f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Serial communication based on a circular buffer, dma and huart with hal controls and Static Strings. </p>
@@ -134,14 +140,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates and returns the number of characters that can be read from rx buffer. Also init the Static Strings library. </p>
-<p>uint16_t <a class="el" href="buffered__serial_8h.html#a0e3c19f2a6c72c3073ae12badfdb4e21" title="Calculates and returns the number of characters that can be read from rx buffer. Also init the Static...">buffered_serial_available(buffered_serial_serial_descriptor *serial)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Calculates and returns the number of characters that can be read from the rx buffer. </p>
+<p>uint16_t <a class="el" href="buffered__serial_8h.html#a0e3c19f2a6c72c3073ae12badfdb4e21" title="Calculates and returns the number of characters that can be read from the rx buffer.">buffered_serial_available(buffered_serial_serial_descriptor *serial)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">serial</td><td>Serial descriptor of the target huart. </td></tr>
+    <tr><td class="paramname">serial</td><td>Pointer to the serial descriptor of the target huart. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of characters that can be read from rx buffer. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of characters that can be read from the rx buffer. </dd></dl>
 
 </div>
 </div>
@@ -168,7 +174,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the serial descriptor of the provided huart. return NULL if there is no serial descriptor attached to the huart provided. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the serial descriptor of the provided huart. Return NULL if there is no serial descriptor attached to the huart provided. </dd></dl>
 
 </div>
 </div>
@@ -188,8 +194,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Link huarts and buffers with serial descriptors and init rx data. </p>
-<p>void <a class="el" href="buffered__serial_8h.html#a932ac0c10c65aeaa78c96188842bf0b4" title="Link huarts and buffers with serial descriptors and init rx data.">buffered_serial_init(UART_HandleTypeDef **huarts)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Link huarts and buffers with serial descriptors and init rx data receiving and idle interrupt. Also init the Static Strings library. </p>
+<p>void <a class="el" href="buffered__serial_8h.html#a932ac0c10c65aeaa78c96188842bf0b4" title="Link huarts and buffers with serial descriptors and init rx data receiving and idle interrupt....">buffered_serial_init(UART_HandleTypeDef **huarts)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">huarts</td><td>Array of pointers to huart pointer. </td></tr>
   </table>
@@ -198,23 +204,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae54417e2bdcff8f9e9069e48fd8a2a86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae54417e2bdcff8f9e9069e48fd8a2a86">&#9670;&nbsp;</a></span>buffered_serial_print_string()</h2>
+<a id="a91711a2de902889195a31c70926d4dba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91711a2de902889195a31c70926d4dba">&#9670;&nbsp;</a></span>buffered_serial_print_character()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void buffered_serial_print_string </td>
+          <td class="memname">void buffered_serial_print_character </td>
           <td>(</td>
-          <td class="paramtype">static_strings_string_descriptor *&#160;</td>
-          <td class="paramname"><em>string_descriptor</em>, </td>
+          <td class="paramtype"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td>
+          <td class="paramname"><em>serial</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td>
-          <td class="paramname"><em>serial</em>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>character</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,25 +230,62 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Transmit a string with the specific huart in the serial descriptor. String larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size. </p>
-<p>void <a class="el" href="buffered__serial_8h.html#ae54417e2bdcff8f9e9069e48fd8a2a86" title="Transmit a string with the specific huart in the serial descriptor. String larger than BUFFERED_SERIA...">buffered_serial_print_string(static_strings_string_descriptor *string,buffered_serial_serial_descriptor *serial)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Transmit a character with the specific huart in the serial descriptor. </p>
+<p>void <a class="el" href="buffered__serial_8h.html#a91711a2de902889195a31c70926d4dba" title="Transmit a character with the specific huart in the serial descriptor.">buffered_serial_print_character(buffered_serial_serial_descriptor *serial,uint8_t character)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">string_descriptor</td><td>Descriptor of the string to transmit. Must have the format specified in the library Static Strings. </td></tr>
-    <tr><td class="paramname">serial</td><td>Serial descriptor of the target huart. </td></tr>
+    <tr><td class="paramname">character</td><td>character to transmit. </td></tr>
+    <tr><td class="paramname">serial</td><td>Pointer to the serial descriptor of the target huart. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a15c8c3fa697255aa99e6e84c41bcb272"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15c8c3fa697255aa99e6e84c41bcb272">&#9670;&nbsp;</a></span>buffered_serial_read_string()</h2>
+<a id="af9f239a3911da64fee87093df8bf360e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f239a3911da64fee87093df8bf360e">&#9670;&nbsp;</a></span>buffered_serial_print_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static_strings_string_descriptor* buffered_serial_read_string </td>
+          <td class="memname">void buffered_serial_print_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td>
+          <td class="paramname"><em>serial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">static_strings_string_descriptor *&#160;</td>
+          <td class="paramname"><em>string_descriptor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit a string with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size. </p>
+<p>void buffered_serial_print_string(static_strings_string_descriptor *string,buffered_serial_serial_descriptor *serial) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string_descriptor</td><td>Pointer to the descriptor of the string to transmit. </td></tr>
+    <tr><td class="paramname">serial</td><td>Pointer to the serial descriptor of the target huart. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a616e9a5064971acf1001fb461c727d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a616e9a5064971acf1001fb461c727d77">&#9670;&nbsp;</a></span>buffered_serial_read_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static_strings_string_descriptor* buffered_serial_read_line </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td>
           <td class="paramname"><em>serial</em></td><td>)</td>
@@ -251,14 +294,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read a string in the specific huart buffer in the serial descriptor. String must have \r\n line end. </p>
-<p>static_strings_string_descriptor *buffered_serial_read_string(<a class="el" href="structbuffered__serial__serial__descriptor.html" title="Meta data of a buffered serial.">buffered_serial_serial_descriptor</a> *serial) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Read a string in the specific huart buffer in the serial descriptor. String must have \r\n line ending. </p>
+<p>static_strings_string_descriptor *buffered_serial_read_line(<a class="el" href="structbuffered__serial__serial__descriptor.html" title="Meta data of a buffered serial.">buffered_serial_serial_descriptor</a> *serial) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">serial</td><td>Serial descriptor of the target huart. </td></tr>
+    <tr><td class="paramname">serial</td><td>Pointer to the serial descriptor of the target huart. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>String descriptor of the line read (See library Static Strings), return NULL if no string detected. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the string descriptor of the line read (See library Static Strings), if NULL check buffered_serial_error_code. </dd></dl>
 
 </div>
 </div>
@@ -281,7 +324,7 @@ Functions</h2></td></tr>
 <p>When IDLE line interruption is fired this function updates the rx buffer meta data. </p>
 <p>void <a class="el" href="buffered__serial_8h.html#a1eaf9bea7e2cffbaddb95999f1709fc2" title="When IDLE line interruption is fired this function updates the rx buffer meta data.">buffered_serial_update_rx_buffer_data(UART_HandleTypeDef *huart)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">huart</td><td>IDLE line interruption source. </td></tr>
+    <tr><td class="paramname">Pointer</td><td>to the huart IDLE line interruption source. </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,7 +336,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_9bc01698b04e4b3e3357ff5c758ce47a.html">carro</a></li><li class="navelem"><a class="el" href="dir_94e6a4566fe520fb5f86c112006dd089.html">STM32CubeIDE</a></li><li class="navelem"><a class="el" href="dir_8dcdd4542f146d53cfbdb42f2168730c.html">workspace_1.4.0</a></li><li class="navelem"><a class="el" href="dir_85fb73b631fa1c50fffd7b7fd4fd778d.html">buffered_serial</a></li><li class="navelem"><a class="el" href="dir_93429996c0727988c7b798b6d7f28c76.html">src</a></li><li class="navelem"><a class="el" href="buffered__serial_8c.html">buffered_serial.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="buffered__serial_8c.html">buffered_serial.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>

@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  000201dc  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000a8cc  00000000  00000000  00020205  2**0
+ 12 .debug_info   0000aa2c  00000000  00000000  00020205  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00001b36  00000000  00000000  0002aad1  2**0
+ 13 .debug_abbrev 00001b2f  00000000  00000000  0002ac31  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00000798  00000000  00000000  0002c608  2**3
+ 14 .debug_aranges 000007c8  00000000  00000000  0002c760  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 000006c0  00000000  00000000  0002cda0  2**3
+ 15 .debug_ranges 000006f0  00000000  00000000  0002cf28  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  000143fd  00000000  00000000  0002d460  2**0
+ 16 .debug_macro  00014400  00000000  00000000  0002d618  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   000077cd  00000000  00000000  0004185d  2**0
+ 17 .debug_line   00007885  00000000  00000000  00041a18  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0006b7bb  00000000  00000000  0004902a  2**0
+ 18 .debug_str    0006b9f0  00000000  00000000  0004929d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  000b47e5  2**0
+ 19 .comment      0000007b  00000000  00000000  000b4c8d  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000275c  00000000  00000000  000b4860  2**2
+ 20 .debug_frame  00002850  00000000  00000000  000b4d08  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -8360,6 +8360,10 @@ void static_strings_init(){
  80034b4:	20000204 	.word	0x20000204
 
 080034b8 <static_strings_allocate>:
+	memcpy(cloned_string->string,clone_from->string,clone_from->length);
+	cloned_string->length = clone_from->length;
+	return cloned_string;
+}
 
 static_strings_string_descriptor *static_strings_allocate(uint16_t string_size){
  80034b8:	b480      	push	{r7}
@@ -8657,9 +8661,9 @@ void static_strings_deallocate(static_strings_string_descriptor *string_descript
  800367c:	b083      	sub	sp, #12
  800367e:	af00      	add	r7, sp, #0
  8003680:	6078      	str	r0, [r7, #4]
-	if(string_descriptor->type != STATIC_STRINGS_STRING_STATUS_CONSTANT){
+	if(string_descriptor->status != STATIC_STRINGS_STRING_STATUS_CONSTANT){
  8003682:	687b      	ldr	r3, [r7, #4]
- 8003684:	799b      	ldrb	r3, [r3, #6]
+ 8003684:	79db      	ldrb	r3, [r3, #7]
  8003686:	2b02      	cmp	r3, #2
  8003688:	d002      	beq.n	8003690 <static_strings_deallocate+0x16>
 		string_descriptor->status = STATIC_STRINGS_STRING_STATUS_DEALLOCATED;

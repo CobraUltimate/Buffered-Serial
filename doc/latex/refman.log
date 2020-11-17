@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.6)  11 SEP 2020 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.6)  16 NOV 2020 22:11
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -845,9 +845,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 169.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
- [1] [2
-
-]
+ [1] [2]
 Package hyperref Info: Option `pageanchor' set `true' on input line 171.
 
 Chapter 1.
@@ -864,83 +862,67 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 174.
 (index.tex
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 1.
-
-Underfull \hbox (badness 10000) detected at line 1
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 4
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 7
-[][][]
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-4.
-("C:\Program Files\MiKTeX\tex/latex/psnfss\ts1phv.fd"
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 3.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
+.
+ ("C:\Program Files\MiKTeX\tex/latex/psnfss\ts1phv.fd"
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 14.
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
-
- []
-
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 38
+(Font)              scaled to size 8.99994pt on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 20.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 22
 .
+
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (73.9555pt too wide) in paragraph at lines 41--41
+Overfull \hbox (73.9555pt too wide) in paragraph at lines 25--25
 \T1/pcr/m/n/7 HAL_UART_Receive_DMA(huart,[](huart)->rx_buffer,BUFFERED_SERIAL_B
 UFFERS_SIZE);  
  []
 
 [1
 
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
 
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
 
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 82.
 
 ) [2]
 Chapter 2.
-(modules.tex
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-) [3
+(modules.tex) [3
 
 ] [4
 
@@ -954,10 +936,7 @@ Chapter 4.
 
 ]
 Chapter 5.
-(group__serial__configuration.tex
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 8.
-) [9]
+(group__serial__configuration.tex) [9]
 \openout2 = `group__error__handling.aux'.
 
  (group__error__handling.tex
@@ -987,25 +966,53 @@ Chapter 6.
 
 ]
 Chapter 7.
-(buffered__serial_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
+(buffered__serial_8c.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 38--39
+Underfull \hbox (badness 8113) in paragraph at lines 14--15
 [][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 (U[]A[]R[]T[]_[][]Handle[]Type[]Def
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 39.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 15.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 39.
-[15]
+(Font)              scaled to size 6.29996pt on input line 15.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 74.
- [16]
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 41.
+[15]
+Underfull \hbox (badness 10000) detected at line 52
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 70
+[][][]
+ []
+
+[16] [17]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 109.
+ [18]
+Underfull \hbox (badness 10000) detected at line 137
+[][][]
+ []
+
+) (buffered__serial_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+
+ []
+
+[19]
+Underfull \hbox (badness 8113) in paragraph at lines 38--39
+[][] $\OMS/cmsy/m/n/10 $ [] \T1/phv/m/n/10 (U[]A[]R[]T[]_[][]Handle[]Type[]Def
+
+ []
+
+[20]
 Underfull \hbox (badness 10000) detected at line 85
 [][][]
  []
@@ -1018,52 +1025,49 @@ Underfull \hbox (badness 10000) detected at line 103
 
 Underfull \vbox (badness 3098) has occurred while \output is active []
 
- [17]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 142.
-
-[18]
+ [21]
+[22]
 Underfull \hbox (badness 10000) detected at line 170
 [][][]
  []
 
-) [19] [20
+) [23] [24
 
-] (refman.ind [21
-
+] (refman.ind [25
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
  (refman.aux (group__error__handling.aux)
 (group__serial__buffers.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 201.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 201.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 84EDDFD3DFDAEA97312E52B1782D6CA3;6977.
+(rerunfilecheck)             Checksum: 6387C4D021E328998BCA0EA2216F61E9;12166.
  ) 
 Here is how much of TeX's memory you used:
- 16722 strings out of 480790
- 244972 string characters out of 2907056
- 535060 words of memory out of 3000000
- 32289 multiletter control sequences out of 15000+200000
- 589950 words of font info for 93 fonts, out of 3000000 for 9000
+ 16833 strings out of 480790
+ 247365 string characters out of 2907056
+ 541942 words of memory out of 3000000
+ 32344 multiletter control sequences out of 15000+200000
+ 591714 words of font info for 100 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,15n,96p,944b,627s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,15n,96p,944b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helv
-etic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><
-C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/M
-iKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (25 pages, 186361 bytes).
+/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/ur
+w/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.
+pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program F
+iles/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/
+type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (29 pages, 229883 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 666 PDF objects out of 1000 (max. 8388607)
+ 153 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
 

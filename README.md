@@ -1,4 +1,7 @@
- ## **Features:**
+Buffered Serial {#mainpage}
+============
+
+## Features:
 
  - Developed for the STM32F103.
  - Serial communication with DMA in circular mode and IDLE interrupt.
@@ -8,15 +11,15 @@
  - Error handling with buffered_serial_error_code.
  - UART Error handling
 
- **Considerations:**
+## Considerations:
 
  - BUFFERED_SERIAL_SERIALS_QUANTITY must be configured to correspond the quantity of huart configured, by default is one.
  - BUFFERED_SERIAL_BUFFERS_SIZE at most can be maximum value of uint16_t, since buffered_serial_available is this type.
  - Buffers can hold at most BUFFERED_SERIAL_BUFFERS_SIZE - 1 data, because when rx_buffer_data_start and rx_buffer_data_finish pointers are equals it can be 0 data or maximum data but the library interpret as 0 data.
 
- # **GETTING STARTED**
+ # GETTING STARTED
  
- ##**UART Error handling in buffered_serial.c**
+ ## UART Error handling in buffered_serial.c
 
  ```C
  void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
@@ -25,7 +28,7 @@
  }
  ```
 
- ## **Configure IDLE interrupt in stm32f1xx_it.c**
+ ## Configure IDLE interrupt in stm32f1xx_it.c
  
  Configure project as described in file project_configuration.pdf in root folder.
  IDLE interrupt must be configured for all huart interrupt handlers.
@@ -38,7 +41,7 @@
  }
  ```
  
- ## **Initializing library and getting serial descriptor in main.c file**
+ ## Initializing library and getting serial descriptor in main.c file
  
  ```C
  MX_GPIO_Init();
@@ -49,7 +52,7 @@
  buffered_serial_serial_descriptor *serial1 = buffered_serial_get_huart_serial_descriptor(&huart1);
  ```
  
- ## **Writing a string**
+ ## Writing a string
  
  ```C
  uint8_t test[40] = "2A6V7W5NL5ZZC6AYE84NKZ6MVFMZ5DZSYD9TM3\r\n";
@@ -60,7 +63,7 @@
 
  DON'T FORGET TO DEALLOCATE STRING AFTER USING.
 
- ## **Reading a line**
+ ## Reading a line
 
  ```C
  if(buffered_serial_available(serial1) > 0){
@@ -78,7 +81,7 @@
 
  DON'T FORGET TO DEALLOCATE STRING AFTER USING.
 
- ## **Writing a character**
+ ## Writing a character
 
  ```C
  uint8_t character = 'A';

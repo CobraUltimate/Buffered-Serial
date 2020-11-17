@@ -1,34 +1,51 @@
 \begin{theindex}
 
-  \item {buffered\_serial.h}, \hyperpage{15}
+  \item {buffered\_serial.c}, \hyperpage{15}
     \subitem {buffered\_serial\_available}, \hyperpage{16}
     \subitem {buffered\_serial\_get\_huart\_serial\_descriptor}, 
-		\hyperpage{17}
-    \subitem {buffered\_serial\_init}, \hyperpage{17}
-    \subitem {buffered\_serial\_print\_character}, \hyperpage{17}
+		\hyperpage{16}
+    \subitem {buffered\_serial\_init}, \hyperpage{16}
+    \subitem {buffered\_serial\_print\_character}, \hyperpage{18}
     \subitem {buffered\_serial\_print\_string}, \hyperpage{18}
     \subitem {buffered\_serial\_read\_line}, \hyperpage{18}
     \subitem {buffered\_serial\_update\_rx\_buffer\_data}, 
 		\hyperpage{19}
+  \item {buffered\_serial.h}, \hyperpage{19}
+    \subitem {buffered\_serial\_available}, \hyperpage{20}
+    \subitem {buffered\_serial\_get\_huart\_serial\_descriptor}, 
+		\hyperpage{21}
+    \subitem {buffered\_serial\_init}, \hyperpage{21}
+    \subitem {buffered\_serial\_print\_character}, \hyperpage{21}
+    \subitem {buffered\_serial\_print\_string}, \hyperpage{22}
+    \subitem {buffered\_serial\_read\_line}, \hyperpage{22}
+    \subitem {buffered\_serial\_update\_rx\_buffer\_data}, 
+		\hyperpage{23}
   \item {buffered\_serial\_available}
-    \subitem {buffered\_serial.h}, \hyperpage{16}
+    \subitem {buffered\_serial.c}, \hyperpage{16}
+    \subitem {buffered\_serial.h}, \hyperpage{20}
   \item {buffered\_serial\_error\_code}
     \subitem {Error handling}, \hyperpage{10}
   \item {buffered\_serial\_get\_huart\_serial\_descriptor}
-    \subitem {buffered\_serial.h}, \hyperpage{17}
+    \subitem {buffered\_serial.c}, \hyperpage{16}
+    \subitem {buffered\_serial.h}, \hyperpage{21}
   \item {buffered\_serial\_init}
-    \subitem {buffered\_serial.h}, \hyperpage{17}
+    \subitem {buffered\_serial.c}, \hyperpage{16}
+    \subitem {buffered\_serial.h}, \hyperpage{21}
   \item {buffered\_serial\_print\_character}
-    \subitem {buffered\_serial.h}, \hyperpage{17}
+    \subitem {buffered\_serial.c}, \hyperpage{18}
+    \subitem {buffered\_serial.h}, \hyperpage{21}
   \item {buffered\_serial\_print\_string}
-    \subitem {buffered\_serial.h}, \hyperpage{18}
+    \subitem {buffered\_serial.c}, \hyperpage{18}
+    \subitem {buffered\_serial.h}, \hyperpage{22}
   \item {buffered\_serial\_read\_line}
-    \subitem {buffered\_serial.h}, \hyperpage{18}
+    \subitem {buffered\_serial.c}, \hyperpage{18}
+    \subitem {buffered\_serial.h}, \hyperpage{22}
   \item {buffered\_serial\_serial\_descriptor}, \hyperpage{13}
     \subitem {rx\_buffer\_data\_finish}, \hyperpage{13}
     \subitem {rx\_buffer\_data\_start}, \hyperpage{13}
   \item {buffered\_serial\_update\_rx\_buffer\_data}
-    \subitem {buffered\_serial.h}, \hyperpage{19}
+    \subitem {buffered\_serial.c}, \hyperpage{19}
+    \subitem {buffered\_serial.h}, \hyperpage{23}
 
   \indexspace
 
