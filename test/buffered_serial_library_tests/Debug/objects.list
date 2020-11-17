@@ -19,5 +19,5 @@
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+"lib/static_strings/src/static_strings.o"
 "src/buffered_serial.o"
-"static_strings_src/static_strings.o"

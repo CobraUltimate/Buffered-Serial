@@ -7,7 +7,7 @@ from termcolor import colored
 init()
 
 ser = serial.Serial()
-ser.port = 'COM4'
+ser.port = 'COM7'
 ser.baudrate = 115200
 ser.open()
 

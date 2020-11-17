@@ -1,0 +1,3 @@
+[submodule "lib/static_strings"]
+	path = lib/static_strings
+	url = https://github.com/CobraUltimate/Static-Strings.git
