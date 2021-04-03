@@ -19,6 +19,8 @@ void \mbox{\hyperlink{buffered__serial_8c_a91711a2de902889195a31c70926d4dba}{buf
 \begin{DoxyCompactList}\small\item\em Transmit a character with the specific huart in the serial descriptor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{buffered__serial_8c_af9f239a3911da64fee87093df8bf360e}{buffered\+\_\+serial\+\_\+print\+\_\+string}} (\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial, static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$string\+\_\+descriptor)
 \begin{DoxyCompactList}\small\item\em Transmit a string with the specific huart in the serial descriptor. Strings larger than B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+B\+U\+F\+F\+E\+R\+S\+\_\+\+S\+I\+ZE will be transmitted in blocks of that size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{buffered__serial_8c_a9f3b67494bca252129e1764126a79618}{buffered\+\_\+serial\+\_\+print\+\_\+line}} (\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial, static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$string\+\_\+descriptor)
+\begin{DoxyCompactList}\small\item\em Add new line (\textbackslash{}r\textbackslash{}n) to the string and then transmit it with the specific huart in the serial descriptor. Strings larger than B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+B\+U\+F\+F\+E\+R\+S\+\_\+\+S\+I\+ZE will be transmitted in blocks of that size. \end{DoxyCompactList}\item 
 static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$ \mbox{\hyperlink{buffered__serial_8c_a616e9a5064971acf1001fb461c727d77}{buffered\+\_\+serial\+\_\+read\+\_\+line}} (\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$serial)
 \begin{DoxyCompactList}\small\item\em Read a string in the specific huart buffer in the serial descriptor. String must have \textbackslash{}r\textbackslash{}n line ending. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{buffered__serial_8c_a1eaf9bea7e2cffbaddb95999f1709fc2}{buffered\+\_\+serial\+\_\+update\+\_\+rx\+\_\+buffer\+\_\+data}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
@@ -102,6 +104,26 @@ void \mbox{\hyperlink{buffered__serial_8h_a91711a2de902889195a31c70926d4dba}{buf
 {\em serial} & Pointer to the serial descriptor of the target huart. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{buffered__serial_8c_a9f3b67494bca252129e1764126a79618}\label{buffered__serial_8c_a9f3b67494bca252129e1764126a79618}} 
+\index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_print\_line@{buffered\_serial\_print\_line}}
+\index{buffered\_serial\_print\_line@{buffered\_serial\_print\_line}!buffered\_serial.c@{buffered\_serial.c}}
+\doxysubsubsection{\texorpdfstring{buffered\_serial\_print\_line()}{buffered\_serial\_print\_line()}}
+{\footnotesize\ttfamily int buffered\+\_\+serial\+\_\+print\+\_\+line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuffered__serial__serial__descriptor}{buffered\+\_\+serial\+\_\+serial\+\_\+descriptor}} $\ast$}]{serial,  }\item[{static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$}]{string\+\_\+descriptor }\end{DoxyParamCaption})}
+
+
+
+Add new line (\textbackslash{}r\textbackslash{}n) to the string and then transmit it with the specific huart in the serial descriptor. Strings larger than B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+B\+U\+F\+F\+E\+R\+S\+\_\+\+S\+I\+ZE will be transmitted in blocks of that size. 
+
+int buffered\+\_\+serial\+\_\+print\+\_\+line(static\+\_\+strings\+\_\+string\+\_\+descriptor $\ast$string,buffered\+\_\+serial\+\_\+serial\+\_\+descriptor $\ast$serial) 
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+descriptor} & Pointer to the descriptor of the string to transmit. \\
+\hline
+{\em serial} & Pointer to the serial descriptor of the target huart. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 if success and 1 if error. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{buffered__serial_8c_af9f239a3911da64fee87093df8bf360e}\label{buffered__serial_8c_af9f239a3911da64fee87093df8bf360e}} 
 \index{buffered\_serial.c@{buffered\_serial.c}!buffered\_serial\_print\_string@{buffered\_serial\_print\_string}}
 \index{buffered\_serial\_print\_string@{buffered\_serial\_print\_string}!buffered\_serial.c@{buffered\_serial.c}}

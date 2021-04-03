@@ -6,7 +6,7 @@
 \item Developed for the S\+T\+M32\+F103.
 \item Serial communication with D\+MA in circular mode and I\+D\+LE interrupt.
 \item Configurable quantity of serials and size of rx and tx buffers.
-\item Simple communication with print string,print character and read line functions.
+\item Simple communication with print string, print character, print line and read line functions.
 \item S\+T\+M32\+Cube\+I\+DE project configuration guide.
 \item Error handling with buffered\+\_\+serial\+\_\+error\+\_\+code.
 \item U\+A\+RT Error handling
@@ -56,7 +56,16 @@ Configure project as described in file project\+\_\+configuration.\+pdf in root 
 \end{DoxyCode}
 
 
-D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I\+NG A\+F\+T\+ER U\+S\+I\+NG.\hypertarget{index_autotoc_md7}{}\doxysubsection{Reading a line}\label{index_autotoc_md7}
+D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I\+NG A\+F\+T\+ER U\+S\+I\+NG.\hypertarget{index_autotoc_md7}{}\doxysubsection{Writing a string as a line}\label{index_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{static\_strings\_string\_descriptor *print\_line\_test = static\_strings\_save((uint8\_t *)\textcolor{stringliteral}{"this is not a line"});}
+\DoxyCodeLine{\mbox{\hyperlink{buffered__serial_8h_a9f3b67494bca252129e1764126a79618}{buffered\_serial\_print\_line}}(serial1,print\_line\_test);}
+\DoxyCodeLine{static\_strings\_deallocate(print\_line\_test);}
+\end{DoxyCode}
+
+
+D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I\+NG A\+F\+T\+ER U\+S\+I\+NG.\hypertarget{index_autotoc_md8}{}\doxysubsection{Reading a line}\label{index_autotoc_md8}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{buffered__serial_8h_a0e3c19f2a6c72c3073ae12badfdb4e21}{buffered\_serial\_available}}(serial1) > 0)\{}
@@ -73,13 +82,13 @@ D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I
 \end{DoxyCode}
 
 
-D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I\+NG A\+F\+T\+ER U\+S\+I\+NG.\hypertarget{index_autotoc_md8}{}\doxysubsection{Writing a character}\label{index_autotoc_md8}
+D\+ON\textquotesingle{}T F\+O\+R\+G\+ET TO D\+E\+A\+L\+L\+O\+C\+A\+TE S\+T\+R\+I\+NG A\+F\+T\+ER U\+S\+I\+NG.\hypertarget{index_autotoc_md9}{}\doxysubsection{Writing a character}\label{index_autotoc_md9}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{uint8\_t character = \textcolor{charliteral}{'A'};}
 \DoxyCodeLine{\mbox{\hyperlink{buffered__serial_8h_a91711a2de902889195a31c70926d4dba}{buffered\_serial\_print\_character}}(serial1,character);}
 \end{DoxyCode}
-\hypertarget{index_autotoc_md9}{}\doxysubsection{Configure serials quantity and size of the buffers}\label{index_autotoc_md9}
+\hypertarget{index_autotoc_md10}{}\doxysubsection{Configure serials quantity and size of the buffers}\label{index_autotoc_md10}
 Just edit these constants in \mbox{\hyperlink{buffered__serial_8h}{buffered\+\_\+serial.\+h}}
 
 

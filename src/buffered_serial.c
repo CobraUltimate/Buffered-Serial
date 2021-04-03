@@ -59,6 +59,17 @@ void buffered_serial_print_string(buffered_serial_serial_descriptor *serial,stat
 	}
 }
 
+int buffered_serial_print_line(buffered_serial_serial_descriptor *serial,static_strings_string_descriptor *string_descriptor){
+	if(string_descriptor == NULL)
+		return 1;
+	static_strings_string_descriptor *line = static_strings_concatenate(string_descriptor,static_strings_new_line);
+	if(line == NULL)
+		return 1;
+	buffered_serial_print_string(serial,line);
+	static_strings_deallocate(line);
+	return 0;
+}
+
 static_strings_string_descriptor *buffered_serial_read_line(buffered_serial_serial_descriptor *serial){
 	uint16_t i;
 	uint16_t availaible_data;

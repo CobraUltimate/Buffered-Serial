@@ -130,10 +130,15 @@ int main(void)
   uint8_t character = 'A';
   buffered_serial_print_character(serial1,character);
 
+  // test 3
+  static_strings_string_descriptor *print_line_test = static_strings_save((uint8_t *)"this is not a line");
+  buffered_serial_print_line(serial1,print_line_test);
+  static_strings_deallocate(print_line_test);
+
   while (1)
   {
 
-	  // test 3-7 Echo
+	  // echo tests.
 
 	  if(buffered_serial_available(serial1) > 0){
 		  uint16_t available = buffered_serial_available(serial1);

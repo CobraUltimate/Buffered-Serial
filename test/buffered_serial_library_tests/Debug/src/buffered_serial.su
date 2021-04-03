@@ -3,6 +3,7 @@ buffered_serial.c:21:36:buffered_serial_get_huart_serial_descriptor	24	static
 buffered_serial.c:31:10:buffered_serial_available	16	static
 buffered_serial.c:40:6:buffered_serial_print_character	16	static
 buffered_serial.c:45:6:buffered_serial_print_string	24	static
-buffered_serial.c:62:35:buffered_serial_read_line	40	static
-buffered_serial.c:107:6:buffered_serial_update_rx_buffer_data	24	static
-buffered_serial.c:119:6:HAL_UART_ErrorCallback	16	static
+buffered_serial.c:62:5:buffered_serial_print_line	24	static
+buffered_serial.c:73:35:buffered_serial_read_line	40	static
+buffered_serial.c:118:6:buffered_serial_update_rx_buffer_data	24	static
+buffered_serial.c:130:6:HAL_UART_ErrorCallback	16	static
