@@ -87,6 +87,14 @@ void buffered_serial_print_character(buffered_serial_serial_descriptor *serial,u
  */
 void buffered_serial_print_string(buffered_serial_serial_descriptor *serial,static_strings_string_descriptor *string_descriptor);
 
+/** int buffered_serial_print_line(static_strings_string_descriptor *string,buffered_serial_serial_descriptor *serial)
+ * \brief Add new line (\\r\\n) to the string and then transmit it with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.
+ * \param string_descriptor Pointer to the descriptor of the string to transmit.
+ * \param serial Pointer to the serial descriptor of the target huart.
+ * \return Return 0 if success and 1 if error.
+ */
+int buffered_serial_print_line(buffered_serial_serial_descriptor *serial,static_strings_string_descriptor *string_descriptor);
+
 /** static_strings_string_descriptor *buffered_serial_read_line(buffered_serial_serial_descriptor *serial)
  * \brief Read a string in the specific huart buffer in the serial descriptor. String must have \\r\\n line ending.
  * \param serial Pointer to the serial descriptor of the target huart.

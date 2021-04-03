@@ -111,6 +111,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af9f239a3911da64fee87093df8bf360e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#af9f239a3911da64fee87093df8bf360e">buffered_serial_print_string</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial, static_strings_string_descriptor *string_descriptor)</td></tr>
 <tr class="memdesc:af9f239a3911da64fee87093df8bf360e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a string with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.  <a href="buffered__serial_8c.html#af9f239a3911da64fee87093df8bf360e">More...</a><br /></td></tr>
 <tr class="separator:af9f239a3911da64fee87093df8bf360e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3b67494bca252129e1764126a79618"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a9f3b67494bca252129e1764126a79618">buffered_serial_print_line</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial, static_strings_string_descriptor *string_descriptor)</td></tr>
+<tr class="memdesc:a9f3b67494bca252129e1764126a79618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new line (\r\n) to the string and then transmit it with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size.  <a href="buffered__serial_8c.html#a9f3b67494bca252129e1764126a79618">More...</a><br /></td></tr>
+<tr class="separator:a9f3b67494bca252129e1764126a79618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a616e9a5064971acf1001fb461c727d77"><td class="memItemLeft" align="right" valign="top">static_strings_string_descriptor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="buffered__serial_8c.html#a616e9a5064971acf1001fb461c727d77">buffered_serial_read_line</a> (<a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *serial)</td></tr>
 <tr class="memdesc:a616e9a5064971acf1001fb461c727d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a string in the specific huart buffer in the serial descriptor. String must have \r\n line ending.  <a href="buffered__serial_8c.html#a616e9a5064971acf1001fb461c727d77">More...</a><br /></td></tr>
 <tr class="separator:a616e9a5064971acf1001fb461c727d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,6 +241,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_UART_ErrorCallbac
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9f3b67494bca252129e1764126a79618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f3b67494bca252129e1764126a79618">&#9670;&nbsp;</a></span>buffered_serial_print_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int buffered_serial_print_line </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbuffered__serial__serial__descriptor.html">buffered_serial_serial_descriptor</a> *&#160;</td>
+          <td class="paramname"><em>serial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">static_strings_string_descriptor *&#160;</td>
+          <td class="paramname"><em>string_descriptor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add new line (\r\n) to the string and then transmit it with the specific huart in the serial descriptor. Strings larger than BUFFERED_SERIAL_BUFFERS_SIZE will be transmitted in blocks of that size. </p>
+<p>int buffered_serial_print_line(static_strings_string_descriptor *string,buffered_serial_serial_descriptor *serial) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string_descriptor</td><td>Pointer to the descriptor of the string to transmit. </td></tr>
+    <tr><td class="paramname">serial</td><td>Pointer to the serial descriptor of the target huart. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return 0 if success and 1 if error. </dd></dl>
 
 </div>
 </div>

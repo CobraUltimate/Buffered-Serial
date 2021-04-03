@@ -32,9 +32,10 @@ var NAVTREE =
       [ "Configure IDLE interrupt in stm32f1xx_it.c", "index.html#autotoc_md4", null ],
       [ "Initializing library and getting serial descriptor in main.c file", "index.html#autotoc_md5", null ],
       [ "Writing a string", "index.html#autotoc_md6", null ],
-      [ "Reading a line", "index.html#autotoc_md7", null ],
-      [ "Writing a character", "index.html#autotoc_md8", null ],
-      [ "Configure serials quantity and size of the buffers", "index.html#autotoc_md9", null ]
+      [ "Writing a string as a line", "index.html#autotoc_md7", null ],
+      [ "Reading a line", "index.html#autotoc_md8", null ],
+      [ "Writing a character", "index.html#autotoc_md9", null ],
+      [ "Configure serials quantity and size of the buffers", "index.html#autotoc_md10", null ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
