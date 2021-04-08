@@ -29,11 +29,13 @@ buffered_serial_serial_descriptor *buffered_serial_get_huart_serial_descriptor(U
 }
 
 uint16_t buffered_serial_available(buffered_serial_serial_descriptor *serial){
-	if(serial->rx_buffer_data_finish >= serial->rx_buffer_data_start){
-		return (uint16_t)(serial->rx_buffer_data_finish - serial->rx_buffer_data_start);
+	uint8_t *local_rx_buffer_data_start = serial->rx_buffer_data_start;
+	uint8_t *local_rx_buffer_data_finish = serial->rx_buffer_data_finish;
+	if(local_rx_buffer_data_finish >= local_rx_buffer_data_start){
+		return (uint16_t)(local_rx_buffer_data_finish - local_rx_buffer_data_start);
 	}
 	else{
-		return ((uint16_t)((serial->rx_buffer + BUFFERED_SERIAL_BUFFERS_SIZE) - serial->rx_buffer_data_start) + (uint16_t)(serial->rx_buffer_data_finish - serial->rx_buffer));
+		return ((uint16_t)((serial->rx_buffer + BUFFERED_SERIAL_BUFFERS_SIZE) - local_rx_buffer_data_start) + (uint16_t)(local_rx_buffer_data_finish - serial->rx_buffer));
 	}
 }
 
